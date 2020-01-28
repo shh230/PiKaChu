@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::after {
+    box-sizing: border-box;
+}
+*::before {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fee433;
+    height: 100vh;
+}
+.wrapper {
+    width: 100%;
+    height: 165px;
+    /* border: 1px solid black; */
+    position: relative;
+}
+.wrapper .nose {
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    border-style: solid;
+    border-radius: 11px;
+    border-color: black transparent transparent;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 28px;
+}
+
+.wrapper .eye{
+    width: 50px;
+    height: 50px;
+    background-color: #2e2e2e;
+    position: absolute;
+    border-radius: 50%;
+}
+.wrapper .eye::before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-color: white;
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 50%;
+    left: 10px;
+    top: 1px;
+}
+
+.wrapper .eye.left {
+    right: 50%;
+    margin-right: 90px;
+}
+
+.wrapper .eye.right {
+    left: 50%;
+    margin-left: 90px;
+}
+
+.wrapper .face {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fc0d1c;
+    border: 2px solid black;
+    top: 85px
+}
+.wrapper .face.left {
+    right: 50%;
+    margin-right: 116px;
+}
+
+.wrapper .face.right {
+    left: 50%;
+    margin-left: 116px;
+}
