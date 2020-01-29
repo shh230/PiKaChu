@@ -24,6 +24,6 @@ body {
     height: 50%;
 }
 #code {
-    overflow: hidden;
+    overflow: auto;
     height: 100%;
 }

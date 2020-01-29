@@ -12,7 +12,7 @@
                 window.clearInterval(interval)
                 callback && callback()
             }
-        }, 20);
+        }, 0);
     }
     let code = `
     /*
