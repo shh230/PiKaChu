@@ -27,6 +27,7 @@
         id = setTimeout(function fn(){
             n += 1
             container.innerHTML = code.substring(0, n)
+            container.innerHTML = Prism.highlight(container.innerHTML, Prism.languages.css)
             styleTag.innerHTML = code.substring(0, n)
             container.scrollTop = container.scrollHeight
             if(n >= code.length) {
