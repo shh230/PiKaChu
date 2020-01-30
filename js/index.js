@@ -1,18 +1,40 @@
 !function(){
+    var duration = 50
+    $('.actions').on('click', 'button', function(e){
+        let $button = $(e.currentTarget)
+        let speed = $button.attr('data-speed')
+        $button.addClass('active').siblings('.active').removeClass('active')
+        switch(speed){
+            case 'slow':
+                duration = 100;
+                break;
+            case 'normal': 
+                duration = 50;
+                break;
+            case 'fast':
+                duration = 10;
+                break;
+            default:
+                duration = 50;
+                break;
+        }
+    })
     function writeCode(prefix, code, callback) {
         let container = document.querySelector('#code')
         let styleTag = document.querySelector('#styleTag')
         let n = 0
-        let interval = setInterval(() => {
+        let id 
+        id = setTimeout(function fn(){
             n += 1
             container.innerHTML = code.substring(0, n)
             styleTag.innerHTML = code.substring(0, n)
             container.scrollTop = container.scrollHeight
             if(n >= code.length) {
-                window.clearInterval(interval)
                 callback && callback()
+            } else {
+                id = setTimeout(fn, duration)
             }
-        }, 20);
+        }, duration)
     }
     let code = `
     /*
